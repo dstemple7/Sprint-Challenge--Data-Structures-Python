@@ -2,7 +2,7 @@ class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
         # array of all the data in the ring
-        self.data = []
+        self.data = [None]*capacity
         # array of all the data in the ring ordered by when added to the ring
         self.history = []
 
@@ -24,4 +24,4 @@ class RingBuffer:
             self.data[swapped] = item
 
     def get(self):
-        return self.data
+        return [x for x in self.data if x is not None]
