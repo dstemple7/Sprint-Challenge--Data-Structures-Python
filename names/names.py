@@ -13,10 +13,14 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
+# create a BST node to put the names in
 wicked_fast_names = BSTNode("yeet")
 
+# iterate over the names in list 1 and insert them into the node
 for i in names_1:
     wicked_fast_names.insert(i)
+
+# iterate over the names in list 2 and if they're already in the node, append them to the duplicates list, else insert them into the node
 for i in names_2:
     if wicked_fast_names.contains(i):
         duplicates.append(i)
